@@ -3,15 +3,15 @@ import React from 'react';
 const PaymentButton = ({ onPayment }) => {
     const fetchToken = async () => {
         try {
-            const response = await fetch('https://api-preprod.phonepe.com/apis/pg-sandbox/v1/oauth/token', {
+            const response = await fetch('https://api.phonepe.com/apis/identity-manager/v1/oauth/token', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: new URLSearchParams({
-                    client_id: 'TEST-M220052JD42ME_25042',
+                    client_id: 'SU2504231251338267218682',
                     client_version: '1',
-                    client_secret: 'OTRkYzk3N2MtZDMyZi00YjkwLTkyNWUtYTRlYTI4ZDE2ODhl',
+                    client_secret: '051435ce-330f-4a5c-a7c0-868d223dd99d',
                     grant_type: 'client_credentials',
                 }),
             });
@@ -42,7 +42,7 @@ const PaymentButton = ({ onPayment }) => {
 
             // Create the order request payload
             const orderPayload = {
-                merchantOrderId: "newtxn123456",
+                merchantOrderId: "hhhhhh",
                 amount: 100, // Amount in smallest currency unit (e.g., cents or paise)
                 expireAfter: 1200, // Expiry time in seconds
                 metaInfo: {
@@ -62,7 +62,7 @@ const PaymentButton = ({ onPayment }) => {
             };
 
             // Simulate a POST request to your payment service
-            const response = await fetch('https://api-preprod.phonepe.com/apis/pg-sandbox/checkout/v2/pay', {
+            const response = await fetch('https://api.phonepe.com/apis/pg/checkout/v2/pay ', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
